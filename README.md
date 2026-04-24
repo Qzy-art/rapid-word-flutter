@@ -2,6 +2,11 @@
 
 > 一款面向考前冲刺和高频回刷的单词学习应用。
 
+[![Web](https://img.shields.io/badge/Web-Online-7ad9e5?style=for-the-badge)](https://rapid-word.vercel.app)
+[![Docs](https://img.shields.io/badge/Docs-Manual-9fe3d8?style=for-the-badge)](https://docs-six-nu.vercel.app)
+[![Windows](https://img.shields.io/badge/Windows-Download-b6efe9?style=for-the-badge)](https://github.com/Qzy-art/rapid-word-flutter/releases)
+[![License](https://img.shields.io/badge/License-MIT-ffe08a?style=for-the-badge)](https://github.com/Qzy-art/rapid-word-flutter/blob/main/LICENSE)
+
 [在线体验 Web 版](https://rapid-word.vercel.app) | [实操手册站](https://docs-six-nu.vercel.app) | [GitHub 仓库](https://github.com/Qzy-art/rapid-word-flutter)
 
 它不是传统那种重流程背词 App，而是尽量把交互压到最短：用户只需要快速判断 `认识` 或 `不认识`，把不会的词自动沉淀到错词本，再通过多轮回刷逐步清空。
@@ -13,6 +18,7 @@
 - 文档手册：[https://docs-six-nu.vercel.app](https://docs-six-nu.vercel.app)
 - 源码仓库：[https://github.com/Qzy-art/rapid-word-flutter](https://github.com/Qzy-art/rapid-word-flutter)
 - 下载方式：当前支持在线直接使用，也支持通过 GitHub Releases 下载 Windows 压缩包
+- 开源协议：`MIT`
 
 ## 在线地址
 
@@ -30,6 +36,20 @@
 - Supabase 账号登录与数据同步
 - Windows 桌面版与 Web 版双端运行
 - 已部署在线网页，手机浏览器可直接访问
+
+## 项目截图
+
+### 首页
+
+![首页截图](assets/screenshots/mobile-home.jpg)
+
+### 词书页
+
+![词书页截图](assets/screenshots/mobile-books.jpg)
+
+### 刷词页
+
+![刷词页截图](assets/screenshots/mobile-review.jpg)
 
 ## 当前状态
 
@@ -135,6 +155,10 @@ Web 端同理：
 flutter run -d chrome --dart-define=SUPABASE_URL=你的SupabaseURL --dart-define=SUPABASE_ANON_KEY=你的PublishableKey
 ```
 
+也可以参考项目里的示例配置文件：
+
+- [.env.example](D:/15pro/Documents/Clodex/rapid-word-flutter/.env.example)
+
 ## 构建 Web
 
 ```powershell
@@ -213,3 +237,7 @@ Docsify 文档站源码位于：
 
 这是一个持续迭代中的真实练手项目，不是模板仓库。  
 它的价值不只是代码本身，也包括从原型、Flutter、Supabase、Vercel、Docsify 到 GitHub 的完整落地过程。
+
+## License
+
+This project is licensed under the MIT License.
