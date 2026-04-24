@@ -9,15 +9,17 @@
 ## 快速入口
 
 - 在线体验：[https://rapid-word.vercel.app](https://rapid-word.vercel.app)
+- 下载 Windows 版：[GitHub Releases](https://github.com/Qzy-art/rapid-word-flutter/releases)
 - 文档手册：[https://docs-six-nu.vercel.app](https://docs-six-nu.vercel.app)
 - 源码仓库：[https://github.com/Qzy-art/rapid-word-flutter](https://github.com/Qzy-art/rapid-word-flutter)
-- 下载方式：当前可在线直接使用，Windows 可下载包可继续补充到 GitHub Releases
+- 下载方式：当前支持在线直接使用，也支持通过 GitHub Releases 下载 Windows 压缩包
 
 ## 在线地址
 
 - App（正式地址）：[https://rapid-word.vercel.app](https://rapid-word.vercel.app)
 - 文档手册站：[https://docs-six-nu.vercel.app](https://docs-six-nu.vercel.app)
 - GitHub 仓库：[https://github.com/Qzy-art/rapid-word-flutter](https://github.com/Qzy-art/rapid-word-flutter)
+- Windows 下载页：[https://github.com/Qzy-art/rapid-word-flutter/releases](https://github.com/Qzy-art/rapid-word-flutter/releases)
 
 ## 功能概览
 
@@ -153,6 +155,23 @@ build/web
 cd build\web
 vercel --prod
 ```
+
+## 下载方式
+
+### 1. 在线使用
+
+- 直接打开 Web 版：[https://rapid-word.vercel.app](https://rapid-word.vercel.app)
+
+### 2. 下载 Windows 版
+
+- 打开 Releases 页面：[https://github.com/Qzy-art/rapid-word-flutter/releases](https://github.com/Qzy-art/rapid-word-flutter/releases)
+- 下载最新的 Windows 压缩包
+- 解压后运行 `rapid_word_flutter.exe`
+
+注意：
+
+- 不要只单独拿一个 `.exe`
+- 需要保留压缩包内的 `data` 和 `.dll` 等配套文件
 
 ## 文档与手册
 
