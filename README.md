@@ -1,8 +1,17 @@
 # 速刷单词 Rapid Word
 
-一款面向考前冲刺和高频回刷的单词学习应用。
+> 一款面向考前冲刺和高频回刷的单词学习应用。
+
+[在线体验 Web 版](https://rapid-word.vercel.app) | [实操手册站](https://docs-six-nu.vercel.app) | [GitHub 仓库](https://github.com/Qzy-art/rapid-word-flutter)
 
 它不是传统那种重流程背词 App，而是尽量把交互压到最短：用户只需要快速判断 `认识` 或 `不认识`，把不会的词自动沉淀到错词本，再通过多轮回刷逐步清空。
+
+## 快速入口
+
+- 在线体验：[https://rapid-word.vercel.app](https://rapid-word.vercel.app)
+- 文档手册：[https://docs-six-nu.vercel.app](https://docs-six-nu.vercel.app)
+- 源码仓库：[https://github.com/Qzy-art/rapid-word-flutter](https://github.com/Qzy-art/rapid-word-flutter)
+- 下载方式：当前可在线直接使用，Windows 可下载包可继续补充到 GitHub Releases
 
 ## 在线地址
 
