@@ -37,20 +37,6 @@
 - Windows 桌面版与 Web 版双端运行
 - 已部署在线网页，手机浏览器可直接访问
 
-## 项目截图
-
-### 首页
-
-![首页截图](assets/screenshots/mobile-home.jpg)
-
-### 词书页
-
-![词书页截图](assets/screenshots/mobile-books.jpg)
-
-### 刷词页
-
-![刷词页截图](assets/screenshots/mobile-review.jpg)
-
 ## 当前状态
 
 当前项目已经完成：
