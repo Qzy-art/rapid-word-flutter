@@ -1,71 +1,187 @@
-# Flutter 项目骨架
+# 速刷单词 Rapid Word
 
-这是基于当前快速刷词原型整理出来的 Flutter 跨端项目骨架，目标是继续演进成可发布的电脑 / 手机互通应用。
+一款面向考前冲刺和高频回刷的单词学习应用。
 
-## 当前已包含
+它不是传统那种重流程背词 App，而是尽量把交互压到最短：用户只需要快速判断 `认识` 或 `不认识`，把不会的词自动沉淀到错词本，再通过多轮回刷逐步清空。
 
-- 应用入口、主题和基础布局
-- 首页、词书页、刷词页、结果页、错词本页
-- 示例词书和示例单词数据
-- `Supabase` 初始化、配置读取和仓库层骨架
-- `Supabase Auth` 登录页与会话判断
-- `Riverpod` 状态层
-- 学习会话与学习记录写入骨架
-- 首页统计读取骨架
+## 在线地址
+
+- App（正式地址）：[https://rapid-word.vercel.app](https://rapid-word.vercel.app)
+- 文档手册站：[https://docs-six-nu.vercel.app](https://docs-six-nu.vercel.app)
+- GitHub 仓库：[https://github.com/Qzy-art/rapid-word-flutter](https://github.com/Qzy-art/rapid-word-flutter)
+
+## 功能概览
+
+- `认识 / 不认识` 双按钮快速刷词
+- 错词自动收集与多轮回刷
+- 词书管理：新建、切换、编辑、导入
+- 手动添加单词与批量导入
+- Supabase 账号登录与数据同步
+- Windows 桌面版与 Web 版双端运行
+- 已部署在线网页，手机浏览器可直接访问
 
 ## 当前状态
 
-目前首页主流程已经迁到 `Riverpod`：
+当前项目已经完成：
 
-- 当前词书选择
-- 整本刷 / 错词回刷
-- `认识 / 不认识` 判定
-- 本轮结果页状态
+- Flutter 项目骨架搭建
+- Windows 桌面端运行
+- Flutter Web 运行与上线
+- Supabase 登录与数据库接入
+- 词书、刷词、结果、错词本等核心流程打通
+- GitHub 仓库、文档站和中文手册整理
+
+当前仍在持续优化：
+
+- 手机端词书页、刷词页和错词本布局
+- Web 端滑动与点击手感
+- 页面视觉统一和交互细节
+
+## 核心玩法
+
+### 1. 快速刷词
+
+- 以单词为视觉中心
+- 用户只做 `认识 / 不认识` 判断
+- `认识` 后可展示中文和分段记忆提示
+- `不认识` 后自动进入错词体系
+
+### 2. 错词本
+
+- 不认识的单词自动进入错词本
+- 支持继续刷错词
+- 支持多轮缩小范围，逐步清空错词
+
+### 3. 词书管理
+
 - 新建词书
-- 手动加词
-- 批量导入
-- 编辑词书
-- 编辑单词
-- 删除单词
-- 云端优先、失败回退到本地 mock
-- 开始刷词时创建 `study_sessions`
-- 每次点击 `认识 / 不认识` 时写入 `study_records`
-- 本轮结束时回写会话汇总
-- 首页会优先读取云端统计：今日已刷、总学习轮次、识别率、错词回刷轮次
+- 切换当前词书
+- 手动添加单词
+- 批量导入单词
+- 编辑与删除词条
 
-核心文件：
+### 4. 云端同步
 
-- `lib/src/features/home/state/home_state.dart`
-- `lib/src/features/home/state/home_notifier.dart`
-- `lib/src/features/home/state/home_provider.dart`
-- `lib/src/features/home/home_page.dart`
+- 使用 Supabase 账号登录
+- 同步词书、错词本和学习进度
+- Web / Windows 可共用同一套数据
 
-## Supabase 配置
+## 技术栈
 
-建议用 Dart define 传入：
+- 前端：`Flutter`
+- 状态管理：`Riverpod`
+- 后端：`Supabase`
+- 数据库：`PostgreSQL`
+- App Web 部署：`Vercel`
+- 文档站：`Docsify + Vercel`
 
-```bash
-flutter run -d windows ^
-  --dart-define=SUPABASE_URL=https://your-project.supabase.co ^
-  --dart-define=SUPABASE_ANON_KEY=your-publishable-or-anon-key
+## 项目结构
+
+```text
+rapid-word-flutter/
+├─ lib/                 Flutter 源码
+├─ web/                 Flutter Web 入口
+├─ windows/             Windows 桌面工程
+├─ supabase/            数据库 schema 与配置
+├─ docs/                Docsify 文档站
+├─ assets/              图标和资源
+├─ APP实操手册.md        详细中文实操手册
+├─ 快速复刻清单.md       快速执行版清单
+└─ README.md            仓库首页说明
 ```
 
-数据库 SQL 文件路径：
+## 本地运行
 
-- `D:\15pro\Documents\Clodex\rapid-word-flutter\supabase\schema.sql`
+### 1. 安装依赖
 
-## 当前限制
+```powershell
+flutter pub get
+```
 
-这台机器目前没有可用的 `flutter` 命令，所以我还没法在本机执行：
+### 2. 运行 Windows 桌面版
 
-- `flutter pub get`
-- `flutter run`
-- `flutter analyze`
+```powershell
+flutter run -d windows
+```
 
-也就是说，这一版已经是可继续开发的代码结构，但还没有在当前机器上实跑验证。
+### 3. 运行 Web 版
 
-## 下一步建议
+```powershell
+flutter run -d chrome
+```
 
-1. 安装 Flutter 后先跑 `flutter pub get`、`flutter analyze`、`flutter run -d windows`
-2. 把 `BooksRepository` 继续扩成真正的学习记录与统计读写
-3. 把登录后的用户数据、词书和错词记录完整落到 Supabase
+## 连接 Supabase 运行
+
+如果要启用云端登录与同步，需要在运行时传入 Supabase 配置：
+
+```powershell
+flutter run -d windows --dart-define=SUPABASE_URL=你的SupabaseURL --dart-define=SUPABASE_ANON_KEY=你的PublishableKey
+```
+
+Web 端同理：
+
+```powershell
+flutter run -d chrome --dart-define=SUPABASE_URL=你的SupabaseURL --dart-define=SUPABASE_ANON_KEY=你的PublishableKey
+```
+
+## 构建 Web
+
+```powershell
+flutter build web --release --dart-define=SUPABASE_URL=你的SupabaseURL --dart-define=SUPABASE_ANON_KEY=你的PublishableKey
+```
+
+构建产物位于：
+
+```text
+build/web
+```
+
+## 部署到 Vercel
+
+在已完成 `flutter build web` 后，可以进入构建目录部署：
+
+```powershell
+cd build\web
+vercel --prod
+```
+
+## 文档与手册
+
+项目内已经整理了两份中文手册：
+
+- 详细版：[APP实操手册.md](D:/15pro/Documents/Clodex/rapid-word-flutter/APP实操手册.md)
+- 快速版：[快速复刻清单.md](D:/15pro/Documents/Clodex/rapid-word-flutter/快速复刻清单.md)
+
+Docsify 文档站源码位于：
+
+- [docs](D:/15pro/Documents/Clodex/rapid-word-flutter/docs)
+
+## 已踩过的关键问题
+
+这个项目在搭建过程中，实际遇到并解决过这些问题：
+
+- Flutter 环境变量与首次初始化
+- Windows desktop support 缺失
+- Windows Developer Mode 导致插件构建失败
+- Riverpod provider override 断言报错
+- Supabase 表结构未初始化
+- 邮箱验证与登录流配置
+- GitHub 首次 push 认证
+- Vercel 部署与临时链接失效
+- Flutter Web 手机端比例与响应式适配
+- 刷词点击时云端写入导致的轻微卡顿
+
+这些问题的详细过程、原因和解决方式，都已经写进文档站和中文手册里。
+
+## 后续规划
+
+- 继续优化手机端词书页、刷词页和错词本布局
+- 继续扩充词库
+- 优化 Web 端滑动和交互性能
+- 完善 README 截图与展示区
+- 逐步整理成更完整的开源项目结构
+
+## 说明
+
+这是一个持续迭代中的真实练手项目，不是模板仓库。  
+它的价值不只是代码本身，也包括从原型、Flutter、Supabase、Vercel、Docsify 到 GitHub 的完整落地过程。
